@@ -13,6 +13,7 @@ int _myenv(info_t *data)
 /**
  **_getenv - get the environment
  *@data: the string to be parsed
+ *@name: the name
  *Return: (Null)
  */
 char *_getenv(info_t *data, const char *name)
@@ -48,7 +49,7 @@ int _mysetenv(info_t *data)
 }
 
 /**
- *_mysetenv - set the environment
+ *_myunsetenv - set the environment
  *@data: the string to be parsed
  *Return: (Null)
  */
@@ -68,7 +69,7 @@ int _myunsetenv(info_t *data)
 }
 
 /**
- *_mysetenv - set the environment
+ *populate_env_list - set the environment
  *@data: the string to be parsed
  *Return: (Null)
  */
