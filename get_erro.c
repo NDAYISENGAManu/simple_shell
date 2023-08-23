@@ -88,7 +88,11 @@ int print_d(int ins, int f)
 /**
  * convert_number - converter function, a clone of itoa
  * @num: number
+<<<<<<< HEAD
  * @b: base
+=======
+ * @base: base
+>>>>>>> 4a4a3c7665f3bc52dc27649bcb9b7fcafe977918
  * @flags: argument flags
  * Return: string
  */

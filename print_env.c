@@ -82,4 +82,3 @@ int populate_env_list(info_t *data)
 	data->env = node;
 	return (0);
 }
-

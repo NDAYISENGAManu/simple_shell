@@ -87,4 +87,3 @@ int _setenv(info_t *data, char *va, char *val)
 	data->env_changed = 1;
 	return (0);
 }
-
