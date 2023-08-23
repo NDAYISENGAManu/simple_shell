@@ -79,7 +79,7 @@ ssize_t get_input(info_t *data)
 			data->cmd_buf_type = CMD_NORM;
 		}
 
-		*buf_p = p;			 /* pass back pointer to current command position */
+		*buf_p = p;
 		return (_strlen(p)); /* return length of current command */
 	}
 
