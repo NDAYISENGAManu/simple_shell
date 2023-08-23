@@ -17,7 +17,7 @@ int is_cmd(info_t *data, char *path)
 		return (0);
 	}
 
-	if (st.s_mode & S_IFREG)
+	if (s.st_mode & S_IFREG)
 	{
 		return (1);
 	}
@@ -89,9 +89,7 @@ char *find_path(info_t *data, char *pathstr, char *cmd)
 				return (path);
 			}
 			if (!pathstr[i])
-			{
 				break;
-			}
 			curr_pos = i;
 		}
 		i++;

@@ -21,7 +21,7 @@ char *_strcpy(char *destin, char *src)
 		i++;
 	}
 	destin[i] = 0;
-	return (dest);
+	return (destin);
 }
 
 /**
@@ -83,7 +83,7 @@ void _puts(char *str)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+int _putchar(char ch)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];

@@ -12,7 +12,7 @@ int hsh(info_t *data, char **av)
 	ssize_t ar = 0;
 	int builtin_ret = 0;
 
-	while (r != -1 && builtin_ret != -2)
+	while (ar != -1 && builtin_ret != -2)
 	{
 		clear_info(data);
 		if (interactive(data))
@@ -39,9 +39,7 @@ int hsh(info_t *data, char **av)
 	write_history(data);
 	free_info(data, 1);
 	if (!interactive(data) && data->status)
-	{
 		exit(data->status);
-	}
 	if (builtin_ret == -2)
 	{
 		if (data->err_num == -1)
@@ -75,7 +73,7 @@ int find_builtin(info_t *data)
 	};
 
 	for (i = 0; builtintbl[i].type; i++)
-		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
+		if (_strcmp(data->argv[0], builtintbl[i].type) == 0)
 		{
 			data->line_count++;
 			built_in_ret = builtintbl[i].func(data);
@@ -101,7 +99,7 @@ void find_cmd(info_t *data)
 		data->line_count++;
 		data->linecount_flag = 0;
 	}
-	for (i = 0, k = 0; info->arg[i]; i++)
+	for (i = 0, k = 0; data->arg[i]; i++)
 		if (!is_delim(data->arg[i], " \t\n"))
 		{
 			k++;
@@ -151,7 +149,7 @@ void fork_cmd(info_t *data)
 	{
 		if (execve(data->path, data->argv, get_environ(data)) == -1)
 		{
-			free_info(info, 1);
+			free_info(data, 1);
 			if (errno == EACCES)
 			{
 				exit(126);
@@ -162,9 +160,9 @@ void fork_cmd(info_t *data)
 	else
 	{
 		wait(&(data->status));
-		if (WIFEXITED(info->status))
+		if (WIFEXITED(data->status))
 		{
-			data->status = WEXITSTATUS(info->status);
+			data->status = WEXITSTATUS(data->status);
 			if (data->status == 126)
 			{
 				print_error(data, "Permission denied\n");

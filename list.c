@@ -91,7 +91,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
  *
  * Return: size of list
  */
-size_t print_list_str(const list_t *h)
+size_t print_list_str(const list_t *head)
 {
 	size_t i = 0;
 

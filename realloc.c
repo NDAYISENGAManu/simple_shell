@@ -11,16 +11,16 @@ char *_memset(char *ar, char bi, unsigned int am)
 {
 	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < am; i++)
 		ar[i] = bi;
 	return (ar);
 }
 
 /**
  * ffree - frees a string of strings
- * @pop: string of strings
+ * @po: string of strings
  */
-void ffree(char **pop)
+void ffree(char **po)
 {
 	char **a = po;
 
@@ -67,8 +67,7 @@ void *_realloc(void *point, unsigned int old, unsigned int new)
 
 	old = old < new ? old : new;
 	while (old--)
-	{
 		p[old] = ((char *)point)[old];
-	free(ptr);
+	free(point);
 	return (p);
 }

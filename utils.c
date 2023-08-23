@@ -64,6 +64,7 @@ char *starts_with(const char *search, const char *find)
 		{
 			return (NULL);
 		}
+	}
 	return ((char *)search);
 }
 
