@@ -2,7 +2,7 @@
 
 /**
  * get_environ - returns the string array copy of our environ
- * @data: Struct containing arguments with used to maintain constant function prototype.
+ * @data: Struct containing arguments with used.
  * Return: Always 0
  */
 char **get_environ(info_t *data)
@@ -18,7 +18,7 @@ char **get_environ(info_t *data)
 
 /**
  * _unsetenv - Remove an environment variable
- * @data: Struct containing arguments with used to maintain constant function prototype.
+ * @data: Struct containing arguments with used.
  *  Return: 1 on delete, 0 otherwise
  * @va: the string env var property
  */
@@ -49,7 +49,7 @@ int _unsetenv(info_t *data, char *va)
 
 /**
  * _setenv - Initialize a new environment variable or modify an existing one
- * @data: Struct containing arguments with used to maintain constant function prototype.
+ * @data: Struct containing arguments with used.
  * @va: the string env var property
  * @val: the string env var value
  *  Return: Always 0
