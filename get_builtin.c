@@ -2,7 +2,7 @@
 
 /**
  * _myhistory - displays the history, one command by line
- * @data: Struct containing arguments with used to maintain constant function prototype.
+ * @data: Struct containing arguments with used
  *  Return: Always 0
  */
 int _myhistory(info_t *data)
@@ -77,7 +77,7 @@ int print_alias(list_t *n)
 
 /**
  * _myalias - mimics the alias builtin (man alias)
- * @data: Struct containing arguments with used to maintain constant function prototype.
+ * @data: Struct containing arguments with used
  *  Return: Always 0
  */
 int _myalias(info_t *data)
